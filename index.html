@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valdagen</title>
+<meta name="description" content="Inbjudan till valdagens aktiviteter – vi röstar, äter lappa puuro hos Mormor &amp; Ukki och rundar av med säsongens sista slagstaglass.">
+<meta property="og:title" content="Valdagen">
+<meta property="og:description" content="Vi röstar, äter lappa puuro och rundar av med säsongens sista slagstaglass.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:opsz,wght@9..144,400..900&family=Karla:wght@400;500;700&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    /* Valsedlarnas färger: gul riksdag, blå region, vit kommun */
+    --gul:#F2C94C;
+    --bla:#A8C4DE;
+    --vit:#FCFBF7;
+    --paper:#EBE6DA;
+    --paper-edge:#D8D1BF;
+    --ink:#16181D;
+    --ink-soft:#5F5C51;
+    --stamp:#B4402F;
+    --slip-shadow: 0 1px 0 rgba(22,24,29,.10), 0 10px 26px -14px rgba(22,24,29,.45);
+    --step-0:1rem;
+    --step-1:1.2rem;
+    --step-2:1.6rem;
+    --step-3:clamp(2.7rem, 9.5vw, 4.8rem);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(circle at 18% 10%, rgba(242,201,76,.30), transparent 42%),
+      radial-gradient(circle at 88% 80%, rgba(168,196,222,.34), transparent 46%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+    font-size:var(--step-0);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .sheet{
+    width:min(100% - 2.5rem, 44rem);
+    margin-inline:auto;
+    padding-block:clamp(3rem,9vw,5.5rem) 3.5rem;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(3rem,7vw,4.75rem);
+  }
+
+  /* ---------- Huvud ---------- */
+  header{display:flex;flex-direction:column;gap:1.1rem;}
+  .eyebrow{
+    font-family:"Courier Prime",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0;
+    display:flex;align-items:center;gap:.85rem;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--paper-edge);}
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-optical-sizing:auto;
+    font-weight:800;
+    font-size:var(--step-3);
+    line-height:.9;
+    letter-spacing:-.03em;
+    margin:0;
+    text-wrap:balance;
+  }
+  h1 em{
+    font-style:italic;
+    font-weight:500;
+    display:block;
+    font-size:.36em;
+    line-height:1.2;
+    letter-spacing:-.005em;
+    margin-top:.6rem;
+    color:var(--ink-soft);
+  }
+  .lead{max-width:36ch;font-size:var(--step-1);margin:0;}
+
+  /* ---------- Valsedlar ---------- */
+  .agenda{display:flex;flex-direction:column;gap:1.4rem;}
+  .slip{
+    position:relative;
+    background:var(--vit);
+    border:1px solid var(--paper-edge);
+    box-shadow:var(--slip-shadow);
+    padding:1.75rem 1.6rem 1.6rem;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.4rem 1.15rem;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .slip::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:.5rem;
+    background:var(--band);
+  }
+  .slip:nth-child(1){--band:var(--gul);transform:rotate(-.5deg);}
+  .slip:nth-child(2){--band:var(--bla);transform:rotate(.35deg);}
+  .slip:nth-child(3){--band:#E0DAC9;transform:rotate(-.25deg);}
+  .slip:hover,.slip:focus-within{
+    transform:rotate(0deg) translateY(-3px);
+    box-shadow:0 1px 0 rgba(22,24,29,.10), 0 18px 34px -18px rgba(22,24,29,.55);
+  }
+  .box{
+    grid-row:span 2;
+    width:2.3rem;height:2.3rem;
+    margin-top:.55rem;
+    border:2px solid var(--ink);
+    display:grid;place-items:center;
+  }
+  .box svg{width:1.45rem;height:1.45rem;opacity:0;transition:opacity .2s ease;}
+  .slip:hover .box svg,.slip:focus-within .box svg{opacity:1;}
+  .box path{stroke:var(--stamp);stroke-width:3.2;stroke-linecap:round;fill:none;}
+  .slip h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:700;
+    font-size:var(--step-2);
+    line-height:1.15;
+    letter-spacing:-.02em;
+    margin:.3rem 0 0;
+    text-wrap:balance;
+  }
+  .slip p{margin:0;color:var(--ink-soft);max-width:38ch;}
+  .slip .no{
+    position:absolute;top:1.3rem;right:1.4rem;
+    font-family:"Courier Prime",ui-monospace,monospace;
+    font-size:.75rem;letter-spacing:.14em;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Röstlängd ---------- */
+  .roll{display:flex;flex-direction:column;gap:1.25rem;}
+  .roll-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:1rem;flex-wrap:wrap;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:.6rem;
+  }
+  .roll-head h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:700;font-size:var(--step-2);margin:0;letter-spacing:-.02em;
+  }
+  .count{
+    font-family:"Courier Prime",ui-monospace,monospace;
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  ol.names{
+    list-style:none;margin:0;padding:0;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));
+    gap:0 1.75rem;
+    font-family:"Courier Prime",ui-monospace,monospace;
+    font-variant-numeric:tabular-nums;
+    counter-reset:roll;
+  }
+  ol.names li{
+    counter-increment:roll;
+    display:flex;align-items:baseline;gap:.7rem;
+    padding:.45rem 0;
+    border-bottom:1px dotted var(--paper-edge);
+  }
+  ol.names li::before{
+    content:counter(roll,decimal-leading-zero);
+    color:var(--ink-soft);font-size:.8rem;
+  }
+  ol.names span{font-size:1.02rem;}
+
+  /* ---------- Stämpel ---------- */
+  .notice{display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem;}
+  .stamp{
+    font-family:"Courier Prime",ui-monospace,monospace;
+    font-weight:700;
+    font-size:clamp(.85rem,3vw,1.05rem);
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--stamp);
+    border:3px double var(--stamp);
+    padding:.7rem 1.15rem;
+    margin:0;
+    transform:rotate(-2.5deg);
+  }
+  .notice p:last-child{margin:0;max-width:38ch;font-size:var(--step-1);}
+
+  footer{
+    border-top:1px solid var(--paper-edge);
+    padding-top:1.25rem;
+    font-family:"Courier Prime",ui-monospace,monospace;
+    font-size:.8rem;
+    letter-spacing:.03em;
+    color:var(--ink-soft);
+    display:flex;gap:.75rem 1.5rem;flex-wrap:wrap;justify-content:space-between;
+  }
+  .swatches{display:flex;align-items:center;gap:.4rem;}
+  .swatches i{width:.85rem;height:.85rem;display:block;border:1px solid var(--paper-edge);}
+
+  :focus-visible{outline:2.5px solid var(--stamp);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header>
+    <p class="eyebrow">Söndag 13 september 2026</p>
+    <h1>Valdagen<em>Inbjudan till en dag med tre punkter</em></h1>
+    <p class="lead">Ett kryss i rutan, en tallrik lappa puuro och en glass som inte kommer tillbaka förrän till våren.</p>
+  </header>
+
+  <section class="agenda" aria-label="Dagens program">
+    <article class="slip" tabindex="0">
+      <span class="no">01</span>
+      <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg></span>
+      <h2>Vi åker och röstar</h2>
+      <p>Gemensam vändning till vallokalen. Ta med legitimation.</p>
+    </article>
+
+    <article class="slip" tabindex="0">
+      <span class="no">02</span>
+      <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg></span>
+      <h2>Lappa puuro hos Mormor &amp; Ukki</h2>
+      <p>Vi möts upp hemma hos Mormor &amp; Ukki när rösterna är lagda.</p>
+    </article>
+
+    <article class="slip" tabindex="0">
+      <span class="no">03</span>
+      <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg></span>
+      <h2>Säsongens sista slagstaglass</h2>
+      <p>Vi rundar av vid Slagsta innan luckan stänger för säsongen.</p>
+    </article>
+  </section>
+
+  <section class="roll">
+    <div class="roll-head">
+      <h2>Röstlängd</h2>
+      <span class="count">12 inbjudna</span>
+    </div>
+    <ol class="names">
+      <li><span>Linus</span></li>
+      <li><span>Michelle</span></li>
+      <li><span>Linnea</span></li>
+      <li><span>Robin</span></li>
+      <li><span>Moa</span></li>
+      <li><span>Andreas</span></li>
+      <li><span>Ralle</span></li>
+      <li><span>Mamma</span></li>
+      <li><span>Mormor</span></li>
+      <li><span>Tarja</span></li>
+      <li><span>Emma</span></li>
+      <li><span>Hanna</span></li>
+    </ol>
+  </section>
+
+  <section class="notice">
+    <p class="stamp">Tidsschema kommer</p>
+    <p>Vi återkommer med exakta tider för samling, puuro och glass så snart de är spikade.</p>
+  </section>
+
+  <footer>
+    <span>Vallokalerna har öppet 08–20 på valdagen.</span>
+    <span class="swatches">Gul, blå, vit — som valsedlarna.
+      <i style="background:#F2C94C"></i><i style="background:#A8C4DE"></i><i style="background:#FCFBF7"></i>
+    </span>
+  </footer>
+
+</main>
+</body>
+</html>
