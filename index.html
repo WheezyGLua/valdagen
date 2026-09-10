@@ -3,31 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valdagen</title>
-<meta name="description" content="Inbjudan till valdagens aktiviteter – vi röstar, äter lappa puuro hos Mormor &amp; Ukki och rundar av med säsongens sista slagstaglass.">
-<meta property="og:title" content="Valdagen">
-<meta property="og:description" content="Vi röstar, äter lappa puuro och rundar av med säsongens sista slagstaglass.">
+<title>Valdagens kungörelse</title>
+<meta name="description" content="Kungörelse angående valdagen, söndagen den 13 september 2026. Ceremonielet fortlöper i tre akter: valförrättning, lappa puuro hos Mormor &amp; Ukki och säsongens sista slagstaglass.">
+<meta property="og:title" content="Valdagens kungörelse">
+<meta property="og:description" content="Med värdighet, hållning och välputsade skodon. Tre akter: valförrättning, lappa puuro och säsongens sista slagstaglass.">
+<meta name="theme-color" content="#E7DFCC">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:opsz,wght@9..144,400..900&family=Karla:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..700&family=EB+Garamond:ital,wght@0,400..600;1,400..500&family=UnifrakturMaguntia&display=swap">
 <style>
   :root{
     color-scheme: light;
-    /* Valsedlarnas färger: gul riksdag, blå region, vit kommun */
-    --gul:#F2C94C;
-    --bla:#A8C4DE;
-    --vit:#FCFBF7;
-    --paper:#EBE6DA;
-    --paper-edge:#D8D1BF;
-    --ink:#16181D;
-    --ink-soft:#5F5C51;
-    --stamp:#B4402F;
-    --slip-shadow: 0 1px 0 rgba(22,24,29,.10), 0 10px 26px -14px rgba(22,24,29,.45);
-    --step-0:1rem;
-    --step-1:1.2rem;
-    --step-2:1.6rem;
-    --step-3:clamp(2.7rem, 9.5vw, 4.8rem);
+    /* Tryckeriets färger: åldrat papper, brunsvart trycksvärta, sigillrött */
+    --paper:#E4DBC6;
+    --sheet:#F4EFE2;
+    --sheet-warm:#EDE5D3;
+    --ink:#1C1A15;
+    --ink-soft:#5D5645;
+    --ink-faint:#8C846F;
+    --rule:#C6BBA0;
+    --seal:#A0332A;
+    /* Valsedlarnas färger, till akternas märken */
+    --gul:#E4BC42;
+    --bla:#93B5D4;
+    --vit:#FBF8EF;
+
+    --display:"Bodoni Moda", "Didot", Georgia, serif;
+    --body:"EB Garamond", Georgia, "Times New Roman", serif;
+    --fraktur:"UnifrakturMaguntia", "Bodoni Moda", Georgia, serif;
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
@@ -35,246 +39,392 @@
     margin:0;
     background-color:var(--paper);
     background-image:
-      radial-gradient(circle at 18% 10%, rgba(242,201,76,.30), transparent 42%),
-      radial-gradient(circle at 88% 80%, rgba(168,196,222,.34), transparent 46%);
+      radial-gradient(ellipse at 50% -10%, rgba(255,252,244,.55), transparent 60%),
+      radial-gradient(ellipse at 10% 100%, rgba(120,104,72,.16), transparent 55%);
     background-attachment:fixed;
     color:var(--ink);
-    font-family:"Karla","Helvetica Neue",Arial,sans-serif;
-    font-size:var(--step-0);
-    line-height:1.6;
+    font-family:var(--body);
+    font-size:clamp(1.05rem, .98rem + .35vw, 1.19rem);
+    line-height:1.62;
     overflow-x:hidden;
+    padding:clamp(.9rem, 3.5vw, 3.25rem) clamp(.7rem, 3vw, 2rem);
   }
+
+  /* ---------- Arket ---------- */
   .sheet{
-    width:min(100% - 2.5rem, 44rem);
+    width:min(100%, 47rem);
     margin-inline:auto;
-    padding-block:clamp(3rem,9vw,5.5rem) 3.5rem;
+    background-color:var(--sheet);
+    background-image:
+      linear-gradient(155deg, rgba(255,255,255,.5), transparent 38%),
+      radial-gradient(ellipse at 78% 8%, rgba(214,196,158,.35), transparent 45%),
+      radial-gradient(ellipse at 12% 92%, rgba(196,178,140,.30), transparent 42%);
+    border:7px double var(--ink);
+    box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 22px 48px -30px rgba(28,26,21,.75);
+    padding:clamp(1.6rem, 5.5vw, 4rem) clamp(1.25rem, 5.5vw, 4.25rem) clamp(2.25rem, 5vw, 3.5rem);
     display:flex;
     flex-direction:column;
-    gap:clamp(3rem,7vw,4.75rem);
+    gap:clamp(2.1rem, 4.5vw, 3.1rem);
   }
+
+  /* ---------- Gemensamma element ---------- */
+  .label{
+    font-family:var(--display);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0;
+  }
+  .centered{text-align:center;}
+  .ornament{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    color:var(--ink-faint);font-size:1.35rem;line-height:1;
+  }
+  .ornament::before,.ornament::after{
+    content:"";height:1px;flex:1;max-width:6.5rem;
+    background:linear-gradient(90deg, transparent, var(--rule), transparent);
+  }
+  p{margin:0;}
+  .prose{max-width:63ch;}
 
   /* ---------- Huvud ---------- */
-  header{display:flex;flex-direction:column;gap:1.1rem;}
-  .eyebrow{
-    font-family:"Courier Prime",ui-monospace,monospace;
-    font-size:.78rem;
-    letter-spacing:.22em;
-    text-transform:uppercase;
+  header{display:flex;flex-direction:column;gap:.85rem;text-align:center;}
+  .kicker{
+    font-family:var(--display);
+    font-size:.7rem;letter-spacing:.36em;text-transform:uppercase;
     color:var(--ink-soft);
-    margin:0;
-    display:flex;align-items:center;gap:.85rem;
   }
-  .eyebrow::after{content:"";flex:1;height:1px;background:var(--paper-edge);}
   h1{
-    font-family:"Fraunces",Georgia,serif;
+    font-family:var(--display);
     font-optical-sizing:auto;
     font-weight:800;
-    font-size:var(--step-3);
-    line-height:.9;
-    letter-spacing:-.03em;
+    font-size:clamp(2.9rem, 1.4rem + 7.2vw, 6.2rem);
+    line-height:.94;
+    letter-spacing:.02em;
+    text-transform:uppercase;
     margin:0;
     text-wrap:balance;
   }
-  h1 em{
+  .occasion{
+    font-family:var(--display);
     font-style:italic;
     font-weight:500;
-    display:block;
-    font-size:.36em;
-    line-height:1.2;
-    letter-spacing:-.005em;
-    margin-top:.6rem;
+    font-size:clamp(1.05rem, .95rem + .5vw, 1.35rem);
     color:var(--ink-soft);
-  }
-  .lead{max-width:36ch;font-size:var(--step-1);margin:0;}
-
-  /* ---------- Valsedlar ---------- */
-  .agenda{display:flex;flex-direction:column;gap:1.4rem;}
-  .slip{
-    position:relative;
-    background:var(--vit);
-    border:1px solid var(--paper-edge);
-    box-shadow:var(--slip-shadow);
-    padding:1.75rem 1.6rem 1.6rem;
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:.4rem 1.15rem;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .slip::before{
-    content:"";
-    position:absolute;
-    inset:0 0 auto 0;
-    height:.5rem;
-    background:var(--band);
-  }
-  .slip:nth-child(1){--band:var(--gul);transform:rotate(-.5deg);}
-  .slip:nth-child(2){--band:var(--bla);transform:rotate(.35deg);}
-  .slip:nth-child(3){--band:#E0DAC9;transform:rotate(-.25deg);}
-  .slip:hover,.slip:focus-within{
-    transform:rotate(0deg) translateY(-3px);
-    box-shadow:0 1px 0 rgba(22,24,29,.10), 0 18px 34px -18px rgba(22,24,29,.55);
-  }
-  .box{
-    grid-row:span 2;
-    width:2.3rem;height:2.3rem;
-    margin-top:.55rem;
-    border:2px solid var(--ink);
-    display:grid;place-items:center;
-  }
-  .box svg{width:1.45rem;height:1.45rem;opacity:0;transition:opacity .2s ease;}
-  .slip:hover .box svg,.slip:focus-within .box svg{opacity:1;}
-  .box path{stroke:var(--stamp);stroke-width:3.2;stroke-linecap:round;fill:none;}
-  .slip h2{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:700;
-    font-size:var(--step-2);
-    line-height:1.15;
-    letter-spacing:-.02em;
-    margin:.3rem 0 0;
     text-wrap:balance;
   }
-  .slip p{margin:0;color:var(--ink-soft);max-width:38ch;}
-  .slip .no{
-    position:absolute;top:1.3rem;right:1.4rem;
-    font-family:"Courier Prime",ui-monospace,monospace;
-    font-size:.75rem;letter-spacing:.14em;
-    color:var(--ink-soft);
+  .datestamp{
+    font-family:var(--display);
+    font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--ink-faint);
+    font-variant-numeric:lining-nums;
   }
 
-  /* ---------- Röstlängd ---------- */
-  .roll{display:flex;flex-direction:column;gap:1.25rem;}
-  .roll-head{
-    display:flex;align-items:baseline;justify-content:space-between;
-    gap:1rem;flex-wrap:wrap;
-    border-bottom:2px solid var(--ink);
-    padding-bottom:.6rem;
+  /* ---------- Hälsning och ingress ---------- */
+  .salutation{display:flex;flex-direction:column;gap:1rem;align-items:center;}
+  .hail{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:clamp(1.35rem, 1.1rem + 1.1vw, 1.85rem);
+    color:var(--ink);
   }
-  .roll-head h2{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:700;font-size:var(--step-2);margin:0;letter-spacing:-.02em;
+  .opening{
+    max-width:60ch;
+    font-size:1.06em;
   }
-  .count{
-    font-family:"Courier Prime",ui-monospace,monospace;
-    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
-  }
-  ol.names{
-    list-style:none;margin:0;padding:0;
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));
-    gap:0 1.75rem;
-    font-family:"Courier Prime",ui-monospace,monospace;
-    font-variant-numeric:tabular-nums;
-    counter-reset:roll;
-  }
-  ol.names li{
-    counter-increment:roll;
-    display:flex;align-items:baseline;gap:.7rem;
-    padding:.45rem 0;
-    border-bottom:1px dotted var(--paper-edge);
-  }
-  ol.names li::before{
-    content:counter(roll,decimal-leading-zero);
-    color:var(--ink-soft);font-size:.8rem;
-  }
-  ol.names span{font-size:1.02rem;}
-
-  /* ---------- Stämpel ---------- */
-  .notice{display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem;}
-  .stamp{
-    font-family:"Courier Prime",ui-monospace,monospace;
+  .opening::after{content:"";display:block;clear:both;}
+  .dropcap{
+    float:left;
+    font-family:var(--display);
     font-weight:700;
-    font-size:clamp(.85rem,3vw,1.05rem);
-    letter-spacing:.2em;
+    font-size:3.9em;
+    line-height:.8;
+    color:var(--seal);
+    margin:.05em .6rem -.05em 0;
+  }
+
+  /* ---------- Sällskapet ---------- */
+  .company{
+    display:flex;flex-direction:column;gap:1.1rem;align-items:center;
+    padding:1.6rem 1rem;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    background:linear-gradient(var(--sheet-warm), var(--sheet-warm)) padding-box;
+  }
+  .names{
+    display:flex;flex-wrap:wrap;justify-content:center;
+    gap:.35rem 1.1rem;
+    max-width:36rem;
+  }
+  .names li{
+    list-style:none;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.15rem, 1rem + .7vw, 1.5rem);
+    letter-spacing:.01em;
+    display:flex;align-items:center;gap:1.1rem;
+  }
+  .names li:not(:last-child)::after{
+    content:"·";color:var(--ink-faint);font-weight:400;
+  }
+
+  /* ---------- Akterna ---------- */
+  .acts{display:flex;flex-direction:column;gap:1.6rem;}
+  .acts > .label{text-align:center;}
+  .acts ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.5rem;}
+  .act{
+    display:grid;
+    grid-template-columns:4.25rem 1fr;
+    gap:.2rem 1.6rem;
+    padding:1.35rem 1.4rem 1.45rem;
+    background:var(--vit);
+    border:1px solid var(--rule);
+    box-shadow:0 8px 20px -18px rgba(28,26,21,.9);
+    transition:box-shadow .3s ease, transform .3s ease;
+  }
+  .act:hover,.act:focus-within{
+    transform:translateY(-2px);
+    box-shadow:0 14px 26px -18px rgba(28,26,21,.95);
+  }
+  .numeral{
+    grid-row:span 2;
+    display:flex;flex-direction:column;align-items:center;gap:.55rem;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:2.5rem;
+    line-height:1;
+    padding-top:.15rem;
+    color:var(--ink);
+  }
+  .numeral::after{
+    content:"";width:1.5rem;height:.42rem;background:var(--band);
+    border:1px solid rgba(28,26,21,.28);
+  }
+  .act h2{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.3rem, 1.1rem + .8vw, 1.65rem);
+    line-height:1.2;
+    letter-spacing:-.005em;
+    margin:0 0 .55rem;
+    padding-bottom:.5rem;
+    border-bottom:2px solid var(--band);
+    text-wrap:balance;
+  }
+  .act h2 small{
+    display:block;
+    font-size:.6rem;
+    font-weight:600;
+    letter-spacing:.3em;
     text-transform:uppercase;
-    color:var(--stamp);
-    border:3px double var(--stamp);
-    padding:.7rem 1.15rem;
+    color:var(--ink-faint);
+    margin-bottom:.4rem;
+  }
+  .act p{color:var(--ink-soft);}
+
+  /* ---------- Anmärkningen ---------- */
+  .remark{
+    padding:1.5rem 1.6rem;
+    border-left:3px solid var(--seal);
+    background:linear-gradient(90deg, rgba(160,51,42,.06), transparent 70%);
+  }
+  .remark h2{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:600;
+    font-size:1.22rem;
+    margin:0 0 .5rem;
+    color:var(--seal);
+    text-wrap:balance;
+  }
+  .remark p{color:var(--ink-soft);}
+
+  /* ---------- Detaljer och stämpel ---------- */
+  .particulars{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    justify-items:stretch;
+    gap:1.9rem;
+    border-top:1px solid var(--rule);
+    padding-top:1.6rem;
+  }
+  .details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(13.5rem, 1fr));
+    gap:1.35rem 2.5rem;
     margin:0;
-    transform:rotate(-2.5deg);
   }
-  .notice p:last-child{margin:0;max-width:38ch;font-size:var(--step-1);}
+  .details div{display:flex;flex-direction:column;gap:.3rem;}
+  .details dt{
+    font-family:var(--display);
+    font-size:.68rem;font-weight:600;
+    letter-spacing:.28em;text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .details dd{margin:0;color:var(--ink-soft);text-wrap:pretty;}
+  .stamp{
+    justify-self:end;align-self:center;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(.66rem, .6rem + .28vw, .8rem);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--seal);
+    border:3px double var(--seal);
+    padding:.7rem 1.05rem;
+    text-align:center;
+    line-height:1.5;
+    transform:rotate(-4deg);
+    opacity:.92;
+  }
+  .stamp span{display:block;font-size:.82em;letter-spacing:.18em;color:rgba(160,51,42,.75);}
 
-  footer{
-    border-top:1px solid var(--paper-edge);
-    padding-top:1.25rem;
-    font-family:"Courier Prime",ui-monospace,monospace;
-    font-size:.8rem;
-    letter-spacing:.03em;
+  /* ---------- Underskrift ---------- */
+  .sign{
+    display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;
+    text-align:right;
+  }
+  .sign .valediction{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:clamp(1.02rem, .95rem + .35vw, 1.2rem);
     color:var(--ink-soft);
-    display:flex;gap:.75rem 1.5rem;flex-wrap:wrap;justify-content:space-between;
+    max-width:32ch;
+    text-wrap:balance;
   }
-  .swatches{display:flex;align-items:center;gap:.4rem;}
-  .swatches i{width:.85rem;height:.85rem;display:block;border:1px solid var(--paper-edge);}
+  .sign .host{
+    font-family:var(--fraktur);
+    font-size:clamp(1.7rem, 1.4rem + 1.5vw, 2.5rem);
+    line-height:1.15;
+    color:var(--ink);
+  }
 
-  :focus-visible{outline:2.5px solid var(--stamp);outline-offset:3px;}
+  .colophon{
+    display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+    gap:.5rem .8rem;
+    font-family:var(--display);
+    font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink-faint);
+    text-align:center;
+  }
+  .colophon i{width:.8rem;height:.8rem;display:block;border:1px solid rgba(28,26,21,.3);}
+
+  :focus-visible{outline:2.5px solid var(--seal);outline-offset:3px;}
+
+  @media (max-width: 34rem){
+    .act{grid-template-columns:1fr;gap:.9rem;}
+    .numeral{
+      grid-row:auto;flex-direction:row;align-items:baseline;gap:.85rem;
+      font-size:2rem;padding-top:0;
+    }
+    .numeral::after{align-self:center;}
+    .names li{gap:.75rem;}
+    .particulars{grid-template-columns:1fr;}
+    .stamp{justify-self:start;}
+    .sign{align-items:flex-start;text-align:left;}
+  }
   @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{box-shadow:none;border-width:5px;}
+    .act{break-inside:avoid;}
+  }
 </style>
 </head>
 <body>
-<main class="sheet">
+
+<article class="sheet">
 
   <header>
-    <p class="eyebrow">Söndag 13 september 2026</p>
-    <h1>Valdagen<em>Inbjudan till en dag med tre punkter</em></h1>
-    <p class="lead">Ett kryss i rutan, en tallrik lappa puuro och en glass som inte kommer tillbaka förrän till våren.</p>
+    <p class="kicker">Kungörelse till sällskapets medlemmar</p>
+    <h1>Valdagen</h1>
+    <p class="ornament" aria-hidden="true">❦</p>
+    <p class="occasion">Den högtidlighet då riket ånyo lägger sitt öde i folkets händer</p>
+    <p class="datestamp">Söndagen den 13 september 2026</p>
   </header>
 
-  <section class="agenda" aria-label="Dagens program">
-    <article class="slip" tabindex="0">
-      <span class="no">01</span>
-      <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg></span>
-      <h2>Vi åker och röstar</h2>
-      <p>Gemensam vändning till vallokalen. Ta med legitimation.</p>
-    </article>
-
-    <article class="slip" tabindex="0">
-      <span class="no">02</span>
-      <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg></span>
-      <h2>Lappa puuro hos Mormor &amp; Ukki</h2>
-      <p>Vi möts upp hemma hos Mormor &amp; Ukki när rösterna är lagda.</p>
-    </article>
-
-    <article class="slip" tabindex="0">
-      <span class="no">03</span>
-      <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg></span>
-      <h2>Säsongens sista slagstaglass</h2>
-      <p>Vi rundar av vid Slagsta innan luckan stänger för säsongen.</p>
-    </article>
+  <section class="salutation">
+    <p class="hail">Kära medlemmar,</p>
+    <p class="opening prose"><span class="dropcap">I</span> denna afton giver jag er denna inbjudan att, med värdighet, hållning och välputsade skodon, deltaga i den högtidlighet som infaller nu på söndag, då riket ånyo lägger sitt öde i folkets händer.</p>
   </section>
 
-  <section class="roll">
-    <div class="roll-head">
-      <h2>Röstlängd</h2>
-      <span class="count">12 inbjudna</span>
-    </div>
-    <ol class="names">
-      <li><span>Linus</span></li>
-      <li><span>Michelle</span></li>
-      <li><span>Linnea</span></li>
-      <li><span>Robin</span></li>
-      <li><span>Moa</span></li>
-      <li><span>Andreas</span></li>
-      <li><span>Ralle</span></li>
-      <li><span>Mamma</span></li>
-      <li><span>Mormor</span></li>
-      <li><span>Tarja</span></li>
-      <li><span>Emma</span></li>
-      <li><span>Hanna</span></li>
+  <section class="company">
+    <p class="label">Till detta ståtliga sällskap kallas härmed</p>
+    <ul class="names">
+      <li>Linus</li>
+      <li>Michelle</li>
+      <li>Linnea</li>
+      <li>Robin</li>
+      <li>Moa</li>
+      <li>Andreas</li>
+      <li>Ralle</li>
+      <li>Mamma</li>
+      <li>Mormor</li>
+      <li>Tarja</li>
+      <li>Emma</li>
+      <li>Hanna</li>
+    </ul>
+  </section>
+
+  <section class="acts">
+    <p class="label">Dagens ceremoniel skall fortlöpa i tre akter</p>
+    <ol>
+      <li class="act" style="--band:var(--gul);" tabindex="0">
+        <span class="numeral" aria-hidden="true">I</span>
+        <h2><small>Akt I</small>Valförrättningen</h2>
+        <p>Vi begiva oss mangrant till vallokalen, där var och en med stadig hand och obeveklig uppsyn lägger sin röst i urnan. Man armbågas icke. Man viskar icke. Man nickar blott stillsamt åt valförrättaren, såsom seden bjuder.</p>
+      </li>
+
+      <li class="act" style="--band:var(--bla);" tabindex="0">
+        <span class="numeral" aria-hidden="true">II</span>
+        <h2><small>Akt II</small>Lappa puuro hos Mormor &amp; Ukki</h2>
+        <p>Därefter samlas vi under Mormor &amp; Ukkis tak, där lappa puuro skall uppdukas i sådan myckenhet att ingen gäst kan lämna bordet med sin värdighet i behåll. Skedar tillhandahålles av värdfolket. Portionerna äro icke förhandlingsbara.</p>
+      </li>
+
+      <li class="act" style="--band:#D8CEB4;" tabindex="0">
+        <span class="numeral" aria-hidden="true">III</span>
+        <h2><small>Akt III</small>Säsongens sista slagstaglass</h2>
+        <p>Slutligen, då dagen lider mot sitt slut, avnjutes säsongens allra sista slagstaglass. Härmed förklaras sommaren officiellt avliden, och må vi alla bära denna sorg med fattning och rak rygg.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="notice">
-    <p class="stamp">Tidsschema kommer</p>
-    <p>Vi återkommer med exakta tider för samling, puuro och glass så snart de är spikade.</p>
+  <aside class="remark">
+    <h2>En ödmjuk anmärkning rörande budkavlen</h2>
+    <p class="prose">Det bör här nämnas, till min stora grämelse, att undertecknad icke förfogar över samtliga berörda parters kontaktuppgifter å den digitala anstalt som kallas Snapchat. Det åligger därför en var av er, i kraft av eder egen ställning i sällskapet, att vidarebefordra denna kallelse till edert respektive påhäng, bihang och medföljande. Den som försummar denna plikt må själv förklara saken för den bortglömde.</p>
+  </aside>
+
+  <section class="particulars">
+    <dl class="details">
+      <div>
+        <dt>Klädsel</dt>
+        <dd>Valfri, dock rekommenderas byxor.</dd>
+      </div>
+      <div>
+        <dt>O.S.A.</dt>
+        <dd>Till undertecknad, helst omgående, då bordsplaceringen kräver eftertanke.</dd>
+      </div>
+      <div>
+        <dt>Tidsschema</dt>
+        <dd>Ännu icke fastställt. Klockslag för samling, puuro och glass meddelas inom kort i särskild kungörelse.</dd>
+      </div>
+    </dl>
+    <p class="stamp">Tidsschema<span>följer i särskild ordning</span></p>
   </section>
 
-  <footer>
-    <span>Vallokalerna har öppet 08–20 på valdagen.</span>
-    <span class="swatches">Gul, blå, vit — som valsedlarna.
-      <i style="background:#F2C94C"></i><i style="background:#A8C4DE"></i><i style="background:#FCFBF7"></i>
-    </span>
+  <footer class="sign">
+    <p class="valediction">Med utsökt vördnad och en aning för hög svansföring,</p>
+    <p class="host">Er ödmjuke värd</p>
   </footer>
 
-</main>
+  <p class="colophon">
+    Gul, blå, vit — såsom valsedlarna
+    <i style="background:#E4BC42"></i><i style="background:#93B5D4"></i><i style="background:#FBF8EF"></i>
+  </p>
+
+</article>
+
 </body>
 </html>

@@ -1,8 +1,10 @@
-# Valdagen
+# Valdagens kungörelse
 
-Inbjudningssida till valdagens aktiviteter, söndag 13 september 2026.
+Inbjudan till valdagens aktiviteter, söndagen den 13 september 2026.
+Kungörelse i tre akter: valförrättningen, lappa puuro hos Mormor & Ukki
+och säsongens sista slagstaglass.
 
-Statisk sida — ett enda `index.html` utan byggsteg. Publiceras via GitHub Pages
-(Settings → Pages → Source: Deploy from a branch → `main` / `root`).
+Statisk sida — ett enda `index.html`, inget byggsteg.
+Publicerad via GitHub Pages: https://wheezyglua.github.io/valdagen/
 
 Öppna lokalt genom att dubbelklicka på `index.html`.
